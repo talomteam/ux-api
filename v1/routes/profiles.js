@@ -5,10 +5,10 @@ let path = require('path')
 let md5 = require('md5');
 
 
-let config = {
-  user: '',
+const config = {
+  user: 'unixcape',
   database: 'ux_core',
-  password: '',
+  password: 'Unixcape#123',
   host: '127.0.0.1',
   port: 5432,
   max: 10,

@@ -6,9 +6,9 @@ let md5 = require('md5');
 
 
 const config = {
-  user: '',
+  user: 'unixcape',
   database: 'ux_core',
-  password: '',
+  password: 'Unixcape#123',
   host: '127.0.0.1',
   port: 5432,
   max: 10,
