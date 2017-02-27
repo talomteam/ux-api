@@ -6,15 +6,16 @@ let md5 = require('md5');
 
 
 const config = {
-  user: 'unixcape',
-  database: 'ux_core',
-  password: 'Unixcape#123',
-  host: '127.0.0.1',
-  port: 5432,
+  user: process.env.DB_USER,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
   max: 10,
   idleTimeoutMillis: 30000
 };
 
+console.log(config);
 
 let pool = new pg.Pool(config);
 
@@ -35,6 +36,7 @@ router.get('/',(req,res,next) => {
     });
     query.on('end', () => {
       done();
+      
       return res.json(results);
     });
   });
@@ -56,6 +58,7 @@ router.get('/:id',(req,res,next) => {
     });
     query.on('end', () => {
       done();
+      
       return res.json(results);
     });
   });
@@ -84,6 +87,7 @@ router.post('/',(req,res,next) => {
    
     query.on('end', () => {
       done();
+      
       return res.json({success: true, data: ''});
     });
     
@@ -106,6 +110,7 @@ router.put('/:id',(req,res,next) => {
     });
     query.on('end', () => {
       done();
+      
       return res.json({success: true, data: ''});
     });
   });
@@ -128,6 +133,7 @@ router.delete('/:id',(req,res,next) => {
     });
     query.on('end', () => {
       done();
+      
       return res.json({success: true, data: ''});
     });
   });

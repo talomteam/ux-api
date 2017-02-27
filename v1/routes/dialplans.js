@@ -3,14 +3,14 @@ let router = express.Router();
 let pg = require('pg')
 let path = require('path')
 let md5 = require('md5');
-
+let esl = require('modesl');
 
 const config = {
-  user: 'unixcape',
-  database: 'ux_core',
-  password: 'Unixcape#123',
-  host: '127.0.0.1',
-  port: 5432,
+  user: process.env.DB_USER,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
   max: 10,
   idleTimeoutMillis: 30000
 };
